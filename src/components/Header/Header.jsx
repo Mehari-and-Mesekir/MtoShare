@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Header.css';
 import Bars from "../../assets/bars.png";
 import { Link } from 'react-scroll';
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const mobile = window.innerWidth <= 768 ? true : false;
@@ -27,6 +28,7 @@ const [menuOpened, setMenuOpened]=useState(false);
       ) : (
         <ul className="header-menu">
           <li>
+            
             <Link
               onClick={() => setMenuOpened(false)}
               to="home"

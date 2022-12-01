@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
+import { NavLink } from "react-router-dom";
 
 import { Link } from "react-scroll";
 import "./Hero.css";
 import NumberCounter from "number-counter";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
 const Hero = () => {
   const transition = { type: "spring", duration: 3 };
   const mobile = window.innerWidth <= 768 ? true : false;
@@ -26,29 +29,23 @@ const Hero = () => {
             <span className="stroke-text">PAID </span>
           </div>
           <div>
-            <span>
-              Click the button below to see videos and articles posted by our
-              customers.
-            </span>
+            <span>Videos and Articles posted by our customers.</span>
           </div>
         </div>
         {/* hero buttons */}
-        <div className="hero-buttons">
-          <buttons className="btn">Videos</buttons>
-          <buttons className="btn">Articles</buttons>
-        </div>
+        <About></About>
+        <Contact />
       </div>
       <div className="right-h">
         <button className="btn">
-          <Link
+          <NavLink
             onClick={() => setMenuOpened(false)}
             to="post"
             span={true}
             smooth={true}
           >
             Post Content
-          </Link>
-          
+          </NavLink>
         </button>
         {/* calories */}
       </div>

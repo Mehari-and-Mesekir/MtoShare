@@ -97,7 +97,8 @@
     position: absolute;
     right: 3rem;
     top: 2rem;
-    color: black;
+    
+    color: var(--orange);
 }
 .heart-rate{
     display: flex;

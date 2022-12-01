@@ -63,6 +63,14 @@ font-size: xx-large;
     align-items: center;
     color: var(--lightgrayz);
 }
+.email-container>textarea{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    align-items: center;
+    color: var(--lightgrayz);
+}
 ::placeholder{
     color: var(--lightgray);
 }
@@ -70,7 +78,26 @@ font-size: xx-large;
     background-color: var(--orange);
     color: white;
 }
-
+.btn{
+    margin-left: 4rem;
+    margin-top: 2rem;
+    
+    background-color: var(--orange);
+    color: white;
+}
+.btn>:link{
+text-decoration: none;
+color: aliceblue;
+}
+.btn>:visited{
+text-decoration: none;
+}
+.btn>:hover{
+text-decoration: none;
+}
+.btn>:active{
+text-decoration: none;
+}
 @media screen and (max-width:768px) {
     .Join{
         flex-direction: column;
