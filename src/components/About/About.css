@@ -1,0 +1,31 @@
+.about{
+    display: flex;
+    justify-content: space-between;
+}
+.left-a{
+    flex: 1;
+    position: relative;
+    background-color: var(--planCard);
+}
+.image>img{
+    width: 100%;
+    height: 100%;
+}
+.right-a{
+    padding: 2rem;
+    padding-top: 1.5rem;
+    flex: 3;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+.description>h2{
+    font-size: 50px;
+    font-weight: bold;
+}
+.description>p{
+    font-size: larger;
+}
+.description{
+    margin-right: 17%;
+}
