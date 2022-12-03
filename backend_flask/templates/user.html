@@ -1,0 +1,34 @@
+<DOCTYPE HTML>
+ <html>
+   <head>
+   	<title>portfolio</title>
+   </head>
+   <body>
+   <p>this is portfolio project</p>
+    {% for i in names %}
+   <ul>
+    <li> {{ i }} </li>
+  	 {% endfor %}
+  	 <p>the request method is {{ request_method}}
+   <form method="POST" action="/user/search">
+   	<p> form</p>
+   	<input type="text" name="email" placeholder="email"><br>
+     <input type="submit"name="submit"placeholder="submit">
+   </form>
+
+
+   <form method="POST" action="/user">
+    <p> form</p>
+    <input type="text" name="email" placeholder="email"><br>
+    <input type="text" name="FullName" placeholder="FullName"><br>
+    <input type="text" name="phoneNumber" placeholder="phoneNumber"><br>
+    <input type="password"name="password"placeholder="password">
+    <input type="submit"name="submit"placeholder="submit">
+  </form>
+   <p> from the database</p>
+   {% for i in todo %}
+   	{{ i.content }}
+   	{% endfor %}
+   </body>
+  </html>
+

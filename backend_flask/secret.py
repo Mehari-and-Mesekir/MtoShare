@@ -1,5 +1,5 @@
 dbhost='localhost'
-dbuser='mehari'
-dbpass='Aa!34567'
+dbuser='root'
+dbpass=''
 dbname='content'
 
