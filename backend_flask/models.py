@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from flask_session import Session
+from werkzeug.utils import secure_filename
 #from form import Todo
 import pymysql
 import secret
@@ -32,7 +33,7 @@ class Videos (db.Model):
     uploadedBy=db.Column(db.String(255))
     videoUrl=db.Column(db.String(255))
     view=db.Column(db.String(255))
-    video= db.Column(db.LargeBinary)
+    thumbnial_url=db.Column(db.LargeBinary)
     
 class Article(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -40,6 +41,7 @@ class Article(db.Model):
     postedBy=db.Column(db.String(60))
     view=db.Column(db.Integer)
     articleUrl=db.Column(db.String(255))
+    article=db.Column(db.String(16000000))
 @app.route('/<string:value>',methods=["GET","POST"])
 def home(value):
       return f'<p>this " {value} " email is not registred please register first <a href="user">click here</a></p>'      
@@ -75,14 +77,15 @@ def user():
 @app.route('/video',methods=["GET","POST"])
 def video():
     if  request.method=='POST':
-      #videoType=request.form['videoType']
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      videoType=request.form['videoType']
       uploadedBy=request.form['uploadedBy']
-      #videoUrl=request.form['videoUrl']
-      view=request.form['view']
-      video_content=request.form["video"]
+      videoUrl=f.filename
+      #view=request.form['view']
+      #video_url=request.form["video"]
  
-      videos=Videos(uploadedBy=uploadedBy,video_content=video_content,
-      	 view=view)
+      videos=Videos(uploadedBy=uploadedBy,videoUrl=videoUrl,videoType=videoType)
       db.session.add(videos)
       db.session.commit()
       return redirect('/',"success")
@@ -94,11 +97,16 @@ def video():
 @app.route('/article',methods=["GET","POST"])
 def article():
     if  request.method=='POST':
-      #articleType=request.form['articleType']
+      articleType=request.form['articleType']
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      articleUrl=f.filename
       postedBy=request.form['postedBy']
-      view=request.form['view']
+      #view=request.form['view']
       article=request.form['article']
-      article=Article(articleType=articleType,postedBy=postedBy,view=view,articleUrl=articleUrl)
+      articleUrl=articleUrl
+      article_type=request.form['articleType']
+      article=Article(articleType=articleType,postedBy=postedBy,articleUrl=articleUrl)
       db.session.add(article)
       db.session.commit()
       return redirect('/',"success")
