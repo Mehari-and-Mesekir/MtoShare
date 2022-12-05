@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './Header.css';
-import Bars from "../../assets/bars.png";
+// import Bars from "../../assets/bars.png";
 import { Link } from 'react-scroll';
 import { NavLink } from "react-router-dom";
 

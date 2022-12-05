@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { Link } from "react-scroll";
 import "./Hero.css";
-import NumberCounter from "number-counter";
+// import NumberCounter from "number-counter";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 const Hero = () => {

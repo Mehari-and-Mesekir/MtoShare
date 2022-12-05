@@ -1,13 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from '../components/Header/Header';
+// import Header from '../components/Header/Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Hero from "../components/Hero/Hero";
-import Post from '../components/post/Post';
-import About from '../components/About/About';
-import Contact from '../components/Contact/Contact';
-import VideoPost from '../components/VideoPost/VideoPost';
-import ArticlePost from '../components/ArticlePost/ArticlePost';
+import Hero from "./components/Hero/Hero";
+import Post from './components/post/Post';
+// import About from '../components/About/About';
+// import Contact from '../components/Contact/Contact';
+import VideoPost from './components/VideoPost/VideoPost';
+import ArticlePost from './components/ArticlePost/ArticlePost';
 
 function App() {
     return ( <
@@ -28,10 +28,10 @@ function App() {
         /> <
         Route path = "/post/article"
         element = { < ArticlePost / > }
-        /> <
-        /Routes> <
-        /div> <
-        /BrowserRouter>
+        /> < /
+        Routes > <
+        /div> < /
+        BrowserRouter >
     );
 }
 

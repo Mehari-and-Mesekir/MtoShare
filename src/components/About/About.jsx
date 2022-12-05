@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css';
-import hero_image_back from "../../assets/upload-icon-png-3.png";
+// import hero_image_back from "../../assets/upload-icon-png-3.png";
 const About = () => {
   return (
     <div className="about">
